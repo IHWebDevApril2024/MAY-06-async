@@ -1,11 +1,11 @@
 let characters;
 
-const pokePromise = fetch("https://rickandmortyapi.com/api/character") // This is a promise
+const charactersPromise = fetch("https://rickandmortyapi.com/api/character") // This is a promise
   .then((whateverTheFetchReturns) => whateverTheFetchReturns.json())
   .then((jsonResponse) => {
     characters = jsonResponse.results;
-    characters.forEach((element) => {
-      console.log(element.name);
+    characters.forEach((character) => {
+      console.log(character.name);
     });
   })
   .catch((error) => {
